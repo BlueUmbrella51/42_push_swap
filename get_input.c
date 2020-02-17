@@ -37,12 +37,31 @@ static long		ft_strtol(char *str)
 	return (result * polar);
 }
 
-int		get_input(t_sort **stacks, int argc, char *argv[])
+static int	is_flag(char *s)
 {
-	int i;
-	long n;
+	if (ft_strcmp(s, "-n") == 0
+	|| ft_strcmp(s, "-r") == 0
+	|| ft_strcmp(s, "-i") == 0)
+		return (1);
+	return (0);
+}
+
+static int	skip_flags(char *argv[])
+{
+	int		i;
 
 	i = 1;
+	while (is_flag(argv[i]))
+		i++;
+	return (i);
+}
+
+int			get_input(t_sort **stacks, int argc, char *argv[])
+{
+	int		i;
+	long	n;
+
+	i = skip_flags(argv);
 	while (i < argc)
 	{
 		if (!validate_input(argv[i]))

@@ -12,29 +12,6 @@
 
 #include "includes/push_swap.h"
 
-static void		print_solution(t_list **solution)
-{
-	t_list			*tmp;
-	t_instruction	*val;
-
-	tmp = *solution;
-	while (tmp)
-	{
-		val = (t_instruction *)tmp->content;
-		write(1, val->instr, val->len);
-		ft_putchar('\n');
-		tmp = tmp->next;
-	}
-}
-
-static void		free_memory(t_sort **stacks, t_list **solution)
-{
-	ft_lstdel(&(*stacks)->a, &ft_del);
-	ft_lstdel(&(*stacks)->b, &ft_del);
-	ft_lstdel(solution, &ft_del);
-	free (*stacks);
-}
-
 int				main(int argc, char *argv[])
 {
 	t_sort		*stacks;

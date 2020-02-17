@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/25 13:55:52 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/27 18:00:27 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/25 13:55:52 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/17 21:52:22 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   read_commands.c                                    :+:    :+:            */
+/*   print_solution.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 15:18:46 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 15:18:46 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/17 20:28:13 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/17 20:28:13 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-int			read_commands(t_sort **stacks, t_list **solution)
+void		print_solution(t_list **solution)
 {
-	char	*instr;
-	int		res;
+	t_list			*tmp;
+	t_instruction	*val;
 
-	res = 1;
-	instr = NULL;
-	while (res > 0)
+	tmp = *solution;
+	while (tmp)
 	{
-		res = get_next_line(0, &instr);
-		if (res > 0)
-		{
-			if (instr)
-			{
-				if (!add_instruction(instr, stacks, solution))
-				{
-					free (instr);
-					return (0);
-				}
-				free (instr);
-				instr = NULL;
-			}
-		}
+		val = (t_instruction *)tmp->content;
+		write(1, val->instr, val->len);
+		ft_putchar('\n');
+		tmp = tmp->next;
 	}
-	if (res < 0)
-		return (0);
-	return (1);
 }

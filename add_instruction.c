@@ -16,7 +16,7 @@ int		add_instruction(char *s, t_sort **stacks, t_list **solution)
 {
 	t_instruction tmp;
 
-	tmp.instr = s;
+	tmp.instr = ft_strdup(s);
 	if (ft_strcmp(s, RRA) == 0 || ft_strcmp(s, RRB) == 0 ||
 	ft_strcmp(s, RRR) == 0)
 		tmp.len = 3;

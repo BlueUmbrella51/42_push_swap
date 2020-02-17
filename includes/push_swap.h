@@ -64,7 +64,7 @@ int				initialize_stacks(t_sort **stacks);
 int				get_input(t_sort **stacks, int argc, char *argv[]);
 int				validate_input(char *arg);
 int				check_duplicates(t_list **lst, int len);
-int				read_commands(t_sort **stacks);
+int				read_commands(t_sort **stacks, t_list **solution);
 int				doop(char *instr, t_sort **stacks);
 void			find_high_low(t_sort **stacks, char st);
 int				do_op(char *instr, t_sort **stacks);
@@ -92,6 +92,7 @@ int				sort_three(t_sort **stacks, t_list **solution);
 int				rev_sort_three(t_sort **stacks, t_list **solution);
 int				distance_low(t_sort **stacks, int low, char st);
 int				rotate_lowest_to_top(t_sort **stacks, t_list **solution);
+void			print_solution(t_list **solution);
 int				ft_sa(t_sort **stacks);
 int				ft_sb(t_sort **stacks);
 int				ft_ss(t_sort **stacks);
@@ -105,7 +106,6 @@ int				ft_pa(t_sort **stacks);
 int				ft_pb(t_sort **stacks);
 int				check_sorted(t_sort **stacks);
 int				check_rev_sorted(t_sort **stacks);
+void			free_memory(t_sort **stacks, t_list **solution);
 void			print_lst(t_list **lst);
-void        	print_lst_dist(t_list **lst);
-
 #endif
