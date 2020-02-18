@@ -105,7 +105,6 @@ int				ft_rrr(t_sort **stacks);
 int				ft_pa(t_sort **stacks);
 int				ft_pb(t_sort **stacks);
 int				check_sorted(t_sort **stacks);
-int				check_rev_sorted(t_sort **stacks);
 void			free_memory(t_sort **stacks, t_list **solution);
 void			print_lst(t_list **lst);
 #endif

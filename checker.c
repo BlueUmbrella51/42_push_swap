@@ -30,7 +30,7 @@ static void		check_flags(int *flags, char *argv[])
 	}
 }
 
-/* Add printing:
+/*	Printing:
 	number of instructions flags[0], -n
 	result flags[1], -r
 	instructions flags[2], -i
