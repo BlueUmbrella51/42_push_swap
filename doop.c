@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   doop.c                                             :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 15:38:13 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 15:38:13 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 12:52:32 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 12:55:26 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+static int	do_op_other(char *instr, t_sort **stacks)
+{
+	int	res;
+
+	res = 0;
+	if (ft_strcmp(RRA, instr) == 0)
+		res = ft_rra(stacks);
+	else if (ft_strcmp(RRB, instr) == 0)
+		res = ft_rrb(stacks);
+	else if (ft_strcmp(RRR, instr) == 0)
+		res = ft_rrr(stacks);
+	return (res);
+}
 
 int			do_op(char *instr, t_sort **stacks)
 {
@@ -33,11 +47,7 @@ int			do_op(char *instr, t_sort **stacks)
 		res = ft_rb(stacks);
 	else if (ft_strcmp(RR, instr) == 0)
 		res = ft_rr(stacks);
-	else if (ft_strcmp(RRA, instr) == 0)
-		res = ft_rra(stacks);
-	else if (ft_strcmp(RRB, instr) == 0)
-		res = ft_rrb(stacks);
-	else if (ft_strcmp(RRR, instr) == 0)
-		res = ft_rrr(stacks);
+	else
+		res = do_op_other(instr, stacks);
 	return (res);
 }

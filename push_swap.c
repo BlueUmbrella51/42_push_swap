@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.c                                        :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 17:01:15 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 17:01:15 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:41:16 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:41:30 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		choose_sort(t_sort **stacks, t_list **solution)
 	res = 0;
 	if ((*stacks)->len_a <= 6)
 		res = sort_short(stacks, solution);
-	else 
+	else
 		res = sort(stacks, solution);
 	if (res == 1)
 		print_solution(solution);

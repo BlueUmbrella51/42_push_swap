@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_distances.c                                    :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/15 14:11:02 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/15 14:11:02 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:36:38 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:37:04 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int				get_distances(t_list **distances, t_sort **stacks, char src)
 	else
 	{
 		if (!(get_distances_b(distances, stacks, src)))
-		return (0);
+			return (0);
 	}
 	if (!(get_distances_dest(distances, stacks, src)))
 		return (0);

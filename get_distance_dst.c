@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_distance_dst.c                                 :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/15 14:13:05 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/15 14:13:05 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:35:01 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:36:02 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-/* Length of destination is always two or bigger */
 
 static int	distance_high(t_sort **stacks, int high, char st)
 {
@@ -126,13 +124,17 @@ int			get_distances_dest(t_list **distances, t_sort **stacks, char src)
 	while (tmp)
 	{
 		if (src == 'a')
-			((t_path *)(tmp->content))->dst_r = get_dist_dst_b(stacks, &tmp, src);
+			((t_path *)(tmp->content))->dst_r = get_dist_dst_b(stacks,
+			&tmp, src);
 		else
-			((t_path *)(tmp->content))->dst_r = get_dist_dst_a(stacks, distances, src);
+			((t_path *)(tmp->content))->dst_r = get_dist_dst_a(stacks,
+			distances, src);
 		if (src == 'a')
-			((t_path *)(tmp->content))->dst_rr = (*stacks)->len_b - ((t_path *)(tmp->content))->dst_r;
+			((t_path *)(tmp->content))->dst_rr = (*stacks)->len_b -
+			((t_path *)(tmp->content))->dst_r;
 		else
-			((t_path *)(tmp->content))->dst_rr = (*stacks)->len_a - ((t_path *)(tmp->content))->dst_r;
+			((t_path *)(tmp->content))->dst_rr = (*stacks)->len_a -
+			((t_path *)(tmp->content))->dst_r;
 		calculate_path(&tmp);
 		tmp = tmp->next;
 	}

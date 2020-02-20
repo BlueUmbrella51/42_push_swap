@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort.c                                             :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/15 12:58:05 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/15 12:58:05 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:46:10 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:51:01 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void		setup(t_sort **stacks, t_list **distances, t_list **solution)
 		add_instruction(SB, stacks, solution);
 }
 
-static int		sort_to_b(t_sort **stacks, t_list **distances, t_list **solution)
+static int		sort_to_b(t_sort **stacks, t_list **distances,
+t_list **solution)
 {
 	find_high_low(stacks, 'b');
 	if (!get_distances(distances, stacks, 'a'))
@@ -40,7 +41,8 @@ static int		sort_to_b(t_sort **stacks, t_list **distances, t_list **solution)
 	return (1);
 }
 
-static int		sort_to_a(t_sort **stacks, t_list **distances, t_list **solution)
+static int		sort_to_a(t_sort **stacks, t_list **distances,
+t_list **solution)
 {
 	find_high_low(stacks, 'a');
 	if (!get_distances(distances, stacks, 'b'))
@@ -58,6 +60,16 @@ static int		sort_to_a(t_sort **stacks, t_list **distances, t_list **solution)
 			return (0);
 	}
 	return (1);
+}
+
+static int		find_start(t_sort **stacks, t_list **solution,
+t_list **distances)
+{
+	int res;
+
+	res = rotate_lowest_to_top(stacks, solution);
+	ft_lstdel(distances, &ft_del);
+	return (res);
 }
 
 int				sort(t_sort **stacks, t_list **solution)
@@ -83,11 +95,5 @@ int				sort(t_sort **stacks, t_list **solution)
 			return (0);
 		}
 	}
-	if (!rotate_lowest_to_top(stacks, solution))
-	{
-		ft_lstdel(&distances, &ft_del);
-		return (0);
-	}
-	ft_lstdel(&distances, &ft_del);
-	return (1);
+	return (find_start(stacks, solution, &distances));
 }

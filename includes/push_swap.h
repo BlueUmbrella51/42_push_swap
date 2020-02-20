@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   tmp.h                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/13 17:06:46 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/13 17:06:46 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:58:15 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 14:01:17 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@
 
 typedef struct	s_instruction
 {
-	char*		instr;
-	int			len;
+	char* instr;
+	int len;
 }				t_instruction;
-
 
 typedef struct	s_sort
 {
@@ -49,16 +48,16 @@ typedef struct	s_sort
 	int			low_b;
 }				t_sort;
 
-typedef struct  s_path
+typedef struct	s_path
 {
-	int			data;
-	int         src_r;
-	int         src_rr;
-	int         dst_r;
-	int         dst_rr;
-	int			moves;
-	int         type;
-}               t_path;
+	int	data;
+	int	src_r;
+	int	src_rr;
+	int	dst_r;
+	int dst_rr;
+	int	moves;
+	int	type;
+}				t_path;
 
 int				initialize_stacks(t_sort **stacks);
 int				get_input(t_sort **stacks, int argc, char *argv[]);

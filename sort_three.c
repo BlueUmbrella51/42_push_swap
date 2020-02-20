@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/16 17:17:05 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/16 17:17:05 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:45:01 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 14:29:40 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void		set_data(int *a, int *b, int *c, t_list **lst)
 	*c = ((t_path *)(tmp->content))->data;
 }
 
-int		sort_three(t_sort **stacks, t_list **solution)
+int				sort_three(t_sort **stacks, t_list **solution)
 {
 	int	a;
 	int	b;
@@ -47,9 +47,10 @@ int		sort_three(t_sort **stacks, t_list **solution)
 		return (add_instruction(SA, stacks, solution) &&
 		add_instruction(RRA, stacks, solution));
 	}
+	return (0);
 }
 
-int		rev_sort_three(t_sort **stacks, t_list **solution)
+int				rev_sort_three(t_sort **stacks, t_list **solution)
 {
 	int	a;
 	int	b;
@@ -65,11 +66,12 @@ int		rev_sort_three(t_sort **stacks, t_list **solution)
 		return (add_instruction(RB, stacks, solution));
 	else if (a >= b && b <= c && a <= c)
 		return (add_instruction(RRB, stacks, solution));
-	else if (a <= b && b >=c && a >= c)
+	else if (a <= b && b >= c && a >= c)
 		return (add_instruction(SB, stacks, solution));
 	else if (a >= b && b <= c && a >= c)
 	{
 		return (add_instruction(SB, stacks, solution)
 		&& add_instruction(RB, stacks, solution));
 	}
+	return (0);
 }

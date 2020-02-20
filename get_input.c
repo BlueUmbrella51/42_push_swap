@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   checker_get_input.c                                :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 12:57:18 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 12:57:18 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:37:38 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:38:18 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static long		ft_strtol(char *str)
 	return (result * polar);
 }
 
-static int	is_flag(char *s)
+static int		is_flag(char *s)
 {
 	if (ft_strcmp(s, "-n") == 0
 	|| ft_strcmp(s, "-r") == 0
@@ -46,7 +46,7 @@ static int	is_flag(char *s)
 	return (0);
 }
 
-static int	skip_flags(char *argv[])
+static int		skip_flags(char *argv[])
 {
 	int		i;
 
@@ -56,7 +56,7 @@ static int	skip_flags(char *argv[])
 	return (i);
 }
 
-int			get_input(t_sort **stacks, int argc, char *argv[])
+int				get_input(t_sort **stacks, int argc, char *argv[])
 {
 	int		i;
 	long	n;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   read_commands.c                                    :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 15:18:46 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 15:18:46 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:42:03 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:42:19 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int			read_commands(t_sort **stacks, t_list **solution)
 			{
 				if (!add_instruction(instr, stacks, solution))
 				{
-					free (instr);
+					free(instr);
 					return (0);
 				}
-				free (instr);
+				free(instr);
 				instr = NULL;
 			}
 		}

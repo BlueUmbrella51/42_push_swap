@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   find_target.c                                      :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/16 15:28:41 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/16 15:28:41 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 12:56:59 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:25:59 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-/*	Path types:
-	1: src_r && dst_r
-	2: src_r && dst_rr
-	3: src_rr && dst_r
-	4: src_rr && dst_rr
-*/
 
 static t_path	*least_moves(t_list **distances)
 {
@@ -39,7 +32,8 @@ static t_path	*least_moves(t_list **distances)
 	return (target);
 }
 
-int			find_target(t_sort **stacks, t_list **distances, char src, t_list **solution)
+int				find_target(t_sort **stacks, t_list **distances, char src,
+t_list **solution)
 {
 	t_path *target;
 

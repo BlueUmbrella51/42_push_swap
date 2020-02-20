@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ss.c                                            :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/14 15:54:19 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/14 15:54:19 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:33:55 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:34:20 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_ss(t_sort **stacks)
 {
-    if (!ft_sa(stacks) || !ft_sb(stacks))
-        return (0);
-    return (1);
+	if (!ft_sa(stacks) || !ft_sb(stacks))
+		return (0);
+	return (1);
 }

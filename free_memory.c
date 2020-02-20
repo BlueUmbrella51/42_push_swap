@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   free_memory.c                                      :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/17 20:36:17 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/17 20:36:17 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:26:31 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:26:52 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static void			free_solution(t_list **solution)
 		curr = next;
 		val = (t_instruction *)curr->content;
 		if (val->instr)
-			free (val->instr);
-		free (curr->content);
+			free(val->instr);
+		free(curr->content);
 		next = curr->next;
-		free (curr);
+		free(curr);
 	}
 	*solution = NULL;
 }
@@ -37,5 +37,5 @@ void				free_memory(t_sort **stacks, t_list **solution)
 	ft_lstdel(&(*stacks)->a, &ft_del);
 	ft_lstdel(&(*stacks)->b, &ft_del);
 	free_solution(solution);
-	free (*stacks);
+	free(*stacks);
 }

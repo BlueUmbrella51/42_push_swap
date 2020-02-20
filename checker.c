@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   checker.c                                          :+:    :+:            */
+/*   tmp..c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/17 17:50:22 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/17 17:50:22 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 12:51:24 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 12:51:47 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ static void		check_flags(int *flags, char *argv[])
 		i++;
 	}
 }
-
-/*	Printing:
-	number of instructions flags[0], -n
-	result flags[1], -r
-	instructions flags[2], -i
-*/
 
 static void		do_flags(int *flags, t_list **solution,
 t_sort **stacks)

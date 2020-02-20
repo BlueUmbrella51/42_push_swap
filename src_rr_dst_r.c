@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   src_rr_dst_r.c                                     :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/16 16:58:31 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/16 16:58:31 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:54:32 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:54:56 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list **solution)
 	{
 		if (!add_instruction(RB, stacks, solution))
 			return (0);
-		target->dst_r -= 1;	
+		target->dst_r -= 1;
 	}
 	return (1);
 }
@@ -48,7 +48,7 @@ t_list **solution)
 	return (1);
 }
 
-int		src_rr_dst_r(t_sort **stacks, t_path *target, char src,
+int				src_rr_dst_r(t_sort **stacks, t_path *target, char src,
 t_list **solution)
 {
 	if (src == 'a')

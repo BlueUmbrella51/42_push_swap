@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   calc_path.c                                        :+:    :+:            */
+/*   template.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/16 14:25:58 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/16 14:25:58 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 12:47:58 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 12:48:35 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-/*	Path types:
-	1: src_r && dst_r
-	2: src_r && dst_rr
-	3: src_rr && dst_r
-	4: src_rr && dst_rr
-*/
 
 static int	find_shortest(int *moves, int len)
 {
@@ -27,7 +20,7 @@ static int	find_shortest(int *moves, int len)
 
 	i = 0;
 	index = 0;
-	smallest = moves[i];  
+	smallest = moves[i];
 	while (i < len)
 	{
 		if (moves[i] < smallest)

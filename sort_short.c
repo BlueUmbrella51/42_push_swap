@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort_short.c                                       :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/17 15:36:46 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/17 15:36:46 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:44:04 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:44:32 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-/* Input can't already be sorted */
 
 static int	rotate_a(t_sort **stacks, t_list **solution, int rot)
 {

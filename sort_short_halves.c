@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort_short_halves.c                                :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/17 16:08:12 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/17 16:08:12 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/20 13:43:16 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/20 13:43:39 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	sort_b(t_sort **stacks, t_list **solution)
 	return (1);
 }
 
-int		sort_short_halves(t_sort **stacks, t_list **solution)
+int			sort_short_halves(t_sort **stacks, t_list **solution)
 {
 	if (!sort_a(stacks, solution) || !sort_b(stacks, solution))
 		return (0);
