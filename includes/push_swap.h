@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.h                                              :+:    :+:            */
+/*   push_swap.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:58:15 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 14:01:17 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/20 14:53:06 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct	s_path
 }				t_path;
 
 int				initialize_stacks(t_sort **stacks);
-int				get_input(t_sort **stacks, int argc, char *argv[]);
+int				get_input(t_sort **stacks, int argc, char *argv[], int i);
 int				validate_input(char *arg);
 int				check_duplicates(t_list **lst, int len);
 int				read_commands(t_sort **stacks, t_list **solution);

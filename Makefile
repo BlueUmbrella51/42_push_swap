@@ -27,10 +27,10 @@ export CFLAGS=$(IFLAGS)
 all: $(CHK_NAME) $(PS_NAME)
 
 $(CHK_NAME): $(CHK_OBJ) $(SH_OBJ) $(LIB)
-	$(CC) -o $(CHK_NAME) $(IFLAGS) $(CHK_OBJ) $(SH_OBJ) -I $(HEADER) -L libft/ -lft
+	@$(CC) -o $(CHK_NAME) $(IFLAGS) $(CHK_OBJ) $(SH_OBJ) -I $(HEADER) -L libft/ -lft
 
 $(PS_NAME): $(PS_OBJ) $(SH_OBJ) $(LIB)
-	$(CC) -o $(PS_NAME) $(IFLAGS) $(PS_OBJ) $(SH_OBJ) -I $(HEADER) -L libft/ -lft
+	@$(CC) -o $(PS_NAME) $(IFLAGS) $(PS_OBJ) $(SH_OBJ) -I $(HEADER) -L libft/ -lft
 
 $(LIB):
 	@make -C libft/

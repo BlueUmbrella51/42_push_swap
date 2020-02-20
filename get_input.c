@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.c                                              :+:    :+:            */
+/*   get_input.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:37:38 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 13:38:18 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/20 14:55:12 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,10 @@ static long		ft_strtol(char *str)
 	return (result * polar);
 }
 
-static int		is_flag(char *s)
+int				get_input(t_sort **stacks, int argc, char *argv[], int i)
 {
-	if (ft_strcmp(s, "-n") == 0
-	|| ft_strcmp(s, "-r") == 0
-	|| ft_strcmp(s, "-i") == 0)
-		return (1);
-	return (0);
-}
-
-static int		skip_flags(char *argv[])
-{
-	int		i;
-
-	i = 1;
-	while (is_flag(argv[i]))
-		i++;
-	return (i);
-}
-
-int				get_input(t_sort **stacks, int argc, char *argv[])
-{
-	int		i;
 	long	n;
 
-	i = skip_flags(argv);
 	while (i < argc)
 	{
 		if (!validate_input(argv[i]))
