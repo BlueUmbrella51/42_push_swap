@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.c                                              :+:    :+:            */
+/*   ft_ra.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:28:28 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 13:28:36 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:06:34 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		ft_ra(t_sort **stacks)
 		return (0);
 	tail = (*stacks)->a;
 	if (!tail)
-		return (0);
+		return (1);
 	if (!tail->next)
-		return (0);
+		return (1);
 	head = tail->next;
 	tmp = head;
 	tail->next = NULL;

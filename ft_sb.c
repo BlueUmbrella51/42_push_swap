@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.c                                              :+:    :+:            */
+/*   ft_sb.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:33:09 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 13:33:20 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:07:13 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int		ft_sb(t_sort **stacks)
 		return (0);
 	curr = (*stacks)->b;
 	if (!curr)
-		return (0);
+		return (1);
 	if (!curr->next)
-		return (0);
+		return (1);
 	tmp = curr->content;
 	curr->content = curr->next->content;
 	curr->next->content = tmp;

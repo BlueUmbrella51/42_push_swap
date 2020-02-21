@@ -6,7 +6,7 @@
 #    By: lravier <lravier@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/20 09:31:34 by lravier        #+#    #+#                 #
-#    Updated: 2020/02/17 17:29:21 by lravier       ########   odam.nl          #
+#    Updated: 2020/02/21 20:11:05 by lravier       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ CSRCS := $(addsuffix .c, $(RAWFILES))
 OSRCS := $(addsuffix .o, $(RAWFILES))
 HEADER_LIBFT = libft.h
 HEADER_GNL = get_next_line.h
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 

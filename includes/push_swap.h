@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:58:15 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 14:53:06 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:28:56 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,9 @@ int				ft_pa(t_sort **stacks);
 int				ft_pb(t_sort **stacks);
 int				check_sorted(t_sort **stacks);
 void			free_memory(t_sort **stacks, t_list **solution);
+void			check_flags(int *flags, char *argv[]);
+int				skip_flags(char *argv[]);
+void			do_flags(int *flags, t_list **solution,
+t_sort **stacks);
 void			print_lst(t_list **lst);
 #endif

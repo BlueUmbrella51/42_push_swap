@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.c                                              :+:    :+:            */
+/*   free_memory.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:26:31 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 13:26:52 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:19:36 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ void				free_memory(t_sort **stacks, t_list **solution)
 	ft_lstdel(&(*stacks)->b, &ft_del);
 	free_solution(solution);
 	free(*stacks);
+	*stacks = NULL;
 }

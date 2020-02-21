@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:41:16 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 14:55:56 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:46:29 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int				main(int argc, char *argv[])
 	res = 0;
 	stacks = NULL;
 	solution = NULL;
-	if (argc < 2)
-		return (ft_error("Error\n", 0));
+	if (argc == 1)
+		return (0);
 	if (!initialize_stacks(&stacks))
 		return (ft_error("Error\n", 0));
 	if (!get_input(&stacks, argc, argv, 1))
@@ -45,6 +45,11 @@ int				main(int argc, char *argv[])
 		return (ft_error("Error\n", 0));
 	}
 	stacks->len_a = argc - 1;
+	if (stacks->len_a == 1)
+	{
+		free_memory(&stacks, &solution);
+		return (1);
+	}
 	if (check_sorted(&stacks))
 	{
 		free_memory(&stacks, &solution);

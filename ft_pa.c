@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tmp.c                                              :+:    :+:            */
+/*   ft_pa.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:27:23 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/20 13:27:30 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 20:06:16 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_pa(t_sort **stacks)
 	if (*stacks == NULL)
 		return (0);
 	if (!(*stacks)->b)
-		return (0);
+		return (1);
 	tmp = ft_lstpop(&(*stacks)->b);
 	ft_lstadd(&(*stacks)->a, tmp);
 	(*stacks)->len_b -= 1;
