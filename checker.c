@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 12:51:24 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 21:11:20 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/21 21:17:58 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,6 @@ int				main(int argc, char *argv[])
 		free_memory(&stacks, &solution);
 		return (ft_error("Error\n", 0));
 	}
-	// if (i == argc - 1)
-	// {
-	// 	free_memory(&stacks, &solution);
-	// 	return (1);
-	// }
 	if (!read_commands(&stacks, &solution))
 	{
 		free_memory(&stacks, &solution);
