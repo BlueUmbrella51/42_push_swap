@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 12:51:24 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 21:17:58 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/25 16:22:35 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void		create_output(int *flags, t_sort **stacks, t_list **solution)
 {
-	printf("create output\n");
 	do_flags(flags, solution, stacks);
 	if (!check_sorted(stacks) || (*stacks)->len_b != 0)
 		ft_putstr("KO\n");
