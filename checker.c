@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 12:51:24 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 16:22:35 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/25 21:17:08 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static void		create_output(int *flags, t_sort **stacks, t_list **solution)
 static int		check_input(int argc, char *argv[], int *flags, int *i)
 {
 	ft_memset(flags, 0, sizeof(int) * 3);
-	if (argc == 1)
-		return (0);
 	*i = skip_flags(argv);
 	if (*i != 1)
 		check_flags(flags, argv);
@@ -44,15 +42,12 @@ int				main(int argc, char *argv[])
 
 	stacks = NULL;
 	solution = NULL;
+	if (argc == 1)
+		return (0);
 	if (!check_input(argc, argv, flags, &i))
 		return (ft_error("Error\n", 0));
-	if (!initialize_stacks(&stacks))
+	if (!validate_input(argc, argv, &stacks, i))
 		return (0);
-	if (!get_input(&stacks, argc, argv, i))
-	{
-		free_memory(&stacks, &solution);
-		return (ft_error("Error\n", 0));
-	}
 	if (!read_commands(&stacks, &solution))
 	{
 		free_memory(&stacks, &solution);

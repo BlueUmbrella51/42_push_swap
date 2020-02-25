@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:37:38 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 20:43:08 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/25 21:07:22 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,48 @@ static long		ft_strtol(char *str)
 	return (result * polar);
 }
 
-int				get_input(t_sort **stacks, int argc, char *argv[], int i)
+static int		get_part_input(t_sort **stacks, char *argv[], int i,
+char **args)
 {
-	long	n;
+	int j;
+	long n;
 
-	while (i < argc)
+	j = 0;
+	while (args[j])
 	{
-		if (!validate_input(argv[i]))
+		if (!validate_argument(args[j]))
 			return (0);
-		n = ft_strtol(argv[i]);
+		n = ft_strtol(args[j]);
 		if (n < INT_MIN || n > INT_MAX)
 			return (0);
 		if (!ft_lstaddend(&(*stacks)->a, &n, sizeof(int)))
+			return (0);
+		j++;
+	}
+	return (1);
+}
+
+int				get_input(t_sort **stacks, int argc, char *argv[], int i)
+{
+	char **args;
+	
+	while (i < argc)
+	{
+		args = ft_strsplit(argv[i], ' ');
+		if (!args)
+			return (0);
+		if (!get_part_input(stacks, argv, i, args))
 		{
-			ft_lstdel(&(*stacks)->a, &ft_del);
+			free_args(args);
 			return (0);
 		}
+		free_args(args);
 		i++;
 	}
-	if (!check_duplicates(&(*stacks)->a, argc - 1))
-	{
-		ft_lstdel(&(*stacks)->a, &ft_del);
+	(*stacks)->len_a = ft_lstlen(&(*stacks)->a);
+	if ((*stacks)->len_a <= 1)
+		return (1);
+	if (!check_duplicates(&(*stacks)->a, (*stacks)->len_a))
 		return (0);
-	}
 	return (1);
 }

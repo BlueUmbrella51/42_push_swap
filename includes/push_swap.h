@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:58:15 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 20:28:56 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/25 20:58:30 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct	s_path
 
 int				initialize_stacks(t_sort **stacks);
 int				get_input(t_sort **stacks, int argc, char *argv[], int i);
-int				validate_input(char *arg);
+int				validate_argument(char *arg);
 int				check_duplicates(t_list **lst, int len);
 int				read_commands(t_sort **stacks, t_list **solution);
 int				doop(char *instr, t_sort **stacks);
@@ -110,4 +110,6 @@ int				skip_flags(char *argv[]);
 void			do_flags(int *flags, t_list **solution,
 t_sort **stacks);
 void			print_lst(t_list **lst);
+void			free_args(char **args);
+int				validate_input(int argc, char *argv[], t_sort **stacks, int i);
 #endif

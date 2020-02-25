@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strsplit.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/25 11:43:51 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/28 10:29:10 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/25 11:43:51 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/25 20:34:04 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,18 @@ static char	*ft_findword(char const *s, char c, int *p)
 	return (word);
 }
 
+static void ft_del_words(char **res)
+{
+	int i;
+
+	i = 0;
+	while (res[i])
+	{
+		free (res[i]);
+		i++;
+	}
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**result;
@@ -69,7 +81,7 @@ char		**ft_strsplit(char const *s, char c)
 	j = 0;
 	i = 0;
 	numw = ft_numwords(s, c);
-	result = (char **)malloc(sizeof(char *) * numw + 1);
+	result = (char **)malloc(sizeof(char *) * (numw + 1));
 	if (!result)
 		return (NULL);
 	result[numw] = NULL;
@@ -78,7 +90,8 @@ char		**ft_strsplit(char const *s, char c)
 		tmp = ft_findword(s, c, &i);
 		if (!tmp)
 		{
-			ft_memdel((void **)&result);
+			ft_del_words(result);
+			free (result);
 			return (NULL);
 		}
 		result[j] = tmp;
