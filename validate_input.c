@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:56:41 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/26 11:31:21 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 14:03:24 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int				validate_argument(char *arg)
 	while (arg[i + space] && !ft_isspace(arg[i + space]))
 	{
 		if (!(ft_isdigit(arg[i + space]) || (i == 0
-		&& (arg[i + space] == '-' || arg[i + space] == '+'))))
+		&& (arg[i + space] == '-' || arg[i + space] == '+')
+		&& ft_isdigit(arg[i + space + 1]))))
 			return (0);
 		i++;
 	}
