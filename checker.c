@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 12:51:24 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 21:17:08 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 12:43:57 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	if (!check_input(argc, argv, flags, &i))
-		return (ft_error("Error\n", 0));
+		return (0);
 	if (!validate_input(argc, argv, &stacks, i))
 		return (0);
 	if (!read_commands(&stacks, &solution))
