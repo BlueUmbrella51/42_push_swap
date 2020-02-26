@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: lravier <lravier@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/02/21 20:09:08 by lravier        #+#    #+#                 #
-#    Updated: 2020/02/21 20:09:08 by lravier       ########   odam.nl          #
+#    Created: 2020/02/26 11:25:26 by lravier        #+#    #+#                 #
+#    Updated: 2020/02/26 11:45:11 by lravier       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,22 +29,19 @@ SH_CSRCS = $(addsuffix .c, $(SH_RAW))
 CHK_OBJ = $(addsuffix .o, $(CHK_RAW))
 PS_OBJ = $(addsuffix .o, $(PS_RAW))
 SH_OBJ = $(addsuffix .o, $(SH_RAW))
-LIB = libft/libft.a
 LIBF = -L libft/ -lft
 HEADER = includes/push_swap.h
 
 .PHONY: all clean fclean re
 
 all: $(CHK_NAME) $(PS_NAME)
+	@make -C libft
 
-$(CHK_NAME): $(CHK_OBJ) $(SH_OBJ) $(LIB)
+$(CHK_NAME): $(CHK_OBJ) $(SH_OBJ)
 	$(CC) -o $(CHK_NAME) $(IFLAGS) $(CHK_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
 
-$(PS_NAME): $(PS_OBJ) $(SH_OBJ) $(LIB)
+$(PS_NAME): $(PS_OBJ) $(SH_OBJ)
 	$(CC) -o $(PS_NAME) $(IFLAGS) $(PS_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
-
-$(LIB):
-	make -C libft/
 
 %.o:%.c $(HEADER)
 	@$(CC) -o $@ -c $<

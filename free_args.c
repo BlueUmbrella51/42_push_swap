@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   free_args.c                                        :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/25 19:27:07 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 19:27:07 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/26 11:28:09 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/26 11:28:22 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void		free_args(char **args)
 		return ;
 	while (args[i])
 	{
-		free (args[i]);
+		free(args[i]);
 		i++;
 	}
-	free (args);
+	free(args);
 	args = NULL;
 }

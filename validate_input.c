@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:56:41 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 21:20:27 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 11:31:21 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int				validate_argument(char *arg)
 	return (1);
 }
 
-int			validate_input(int argc, char *argv[], t_sort **stacks, int i)
+int				validate_input(int argc, char *argv[], t_sort **stacks, int i)
 {
 	t_list *solution;
 

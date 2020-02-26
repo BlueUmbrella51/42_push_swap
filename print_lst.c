@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:39:38 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 21:05:20 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 11:30:50 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		print_lst(t_list **lst)
 	{
 		s = ft_itoa(*(int *)tmp->content);
 		ft_putstr(s);
-		free (s);
+		free(s);
 		ft_putchar('\n');
 		tmp = tmp->next;
 	}

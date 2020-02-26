@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/25 11:43:51 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 20:34:04 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 11:27:24 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,17 @@ static char	*ft_findword(char const *s, char c, int *p)
 	return (word);
 }
 
-static void ft_del_words(char **res)
+static void	ft_del_words(char **res)
 {
 	int i;
 
 	i = 0;
 	while (res[i])
 	{
-		free (res[i]);
+		free(res[i]);
 		i++;
 	}
+	free(res);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -91,7 +92,6 @@ char		**ft_strsplit(char const *s, char c)
 		if (!tmp)
 		{
 			ft_del_words(result);
-			free (result);
 			return (NULL);
 		}
 		result[j] = tmp;

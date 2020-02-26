@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   flags.c                                            :+:    :+:            */
+/*   tmp.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/21 20:26:26 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/21 20:26:26 by lravier       ########   odam.nl         */
+/*   Created: 2020/02/26 11:29:14 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/26 11:29:26 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_sort **stacks)
 		ft_putstr("Number of operations: ");
 		s = ft_itoa(ft_lstlen(solution));
 		ft_putstr(s);
-		free (s);
+		free(s);
 		ft_putchar('\n');
 	}
 	if (flags[1])

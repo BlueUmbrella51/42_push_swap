@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/20 13:37:38 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/25 21:07:22 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/26 11:36:00 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static long		ft_strtol(char *str)
 static int		get_part_input(t_sort **stacks, char *argv[], int i,
 char **args)
 {
-	int j;
-	long n;
+	int			j;
+	long		n;
 
 	j = 0;
 	while (args[j])
@@ -61,7 +61,7 @@ char **args)
 int				get_input(t_sort **stacks, int argc, char *argv[], int i)
 {
 	char **args;
-	
+
 	while (i < argc)
 	{
 		args = ft_strsplit(argv[i], ' ');
