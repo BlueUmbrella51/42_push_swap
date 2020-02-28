@@ -6,7 +6,7 @@
 #    By: lravier <lravier@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/02/26 11:25:26 by lravier        #+#    #+#                 #
-#    Updated: 2020/02/26 12:04:31 by lravier       ########   odam.nl          #
+#    Updated: 2020/02/26 14:12:48 by lravier       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,13 +56,13 @@ HEADER = includes/push_swap.h
 all: $(CHK_NAME) $(PS_NAME)
 
 $(LIB): $(LIB_OBJ)
-	make -C libft/
+	@make -C libft/
 
 $(CHK_NAME): $(CHK_OBJ) $(SH_OBJ) $(LIB)
-	$(CC) -o $(CHK_NAME) $(IFLAGS) $(CHK_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
+	@$(CC) -o $(CHK_NAME) $(IFLAGS) $(CHK_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
 
 $(PS_NAME): $(PS_OBJ) $(SH_OBJ) $(LIB)
-	$(CC) -o $(PS_NAME) $(IFLAGS) $(PS_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
+	@$(CC) -o $(PS_NAME) $(IFLAGS) $(PS_OBJ) $(SH_OBJ) -I $(HEADER) $(LIBF)
 
 %.o:%.c $(HEADER)
 	@$(CC) -o $@ -c $<
