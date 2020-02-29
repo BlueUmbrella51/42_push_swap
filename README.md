@@ -28,6 +28,9 @@ The push_swap instruction language consists of the following options:
 **rrb:**  reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.\
 **rrr:**  rra and rrb at the same time.
 
+The full assignment can be found here:\
+[push_swap subject](https://github.com/LER1990/42_subjects/blob/master/push_swap.en.pdf)
+
 <h4>Criteria for evaluation</h4>
 
 The evaluation of this project depends on how many operations it takes the implementation to sort any gives list.\
